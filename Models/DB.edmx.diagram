@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="43de749f14f04bb595f24abc13d48e8b" Name="Diagram1">
+        <EntityTypeShape EntityType="dbBodegaModel.Categoria" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbBodegaModel.Empleado" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbBodegaModel.Inventario" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbBodegaModel.Pedido" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbBodegaModel.Pedido_Producto" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbBodegaModel.Producto" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbBodegaModel.Proveedor" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbBodegaModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbBodegaModel.Usuario" Width="1.5" PointX="1.5" PointY="12" IsExpanded="true" />
+        <AssociationConnector Association="dbBodegaModel.FK__Producto__fk_idC__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="dbBodegaModel.FK__Empleado__fk_idP__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="dbBodegaModel.FK__Pedido__fk_idEmp__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="dbBodegaModel.FK__Inventari__fk_Pr__02FC7413" ManuallyRouted="false" />
+        <AssociationConnector Association="dbBodegaModel.FK__Pedido_Pr__fk_Pe__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="dbBodegaModel.FK__Pedido_Pr__fk_Pr__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="dbBodegaModel.FK__Producto__fk_idP__4D94879B" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
