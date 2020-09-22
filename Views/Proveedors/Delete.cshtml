@@ -1,0 +1,64 @@
+﻿@model ProyectoBodegav02.Models.Proveedor
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Proveedor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre_Prove)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_Prove)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono_Prove)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono_Prove)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.direccion_Prove)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.direccion_Prove)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NIF_Prove)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NIF_Prove)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.correo_Prove)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.correo_Prove)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

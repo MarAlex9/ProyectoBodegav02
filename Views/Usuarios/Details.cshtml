@@ -1,0 +1,66 @@
+﻿@model ProyectoBodegav02.Models.Usuario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Usuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre_Usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_Usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellido_Usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellido_Usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.direccion_Usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.direccion_Usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cedula_Usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cedula_Usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.correro_Usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.correro_Usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.genero_Usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.genero_Usuario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idPersona }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

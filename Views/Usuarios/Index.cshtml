@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ProyectoBodegav02.Models.Usuario>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre_Usuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellido_Usuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.direccion_Usuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cedula_Usuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.correro_Usuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.genero_Usuario)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre_Usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellido_Usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.direccion_Usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cedula_Usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.correro_Usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.genero_Usuario)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idPersona }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idPersona }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idPersona })
+        </td>
+    </tr>
+}
+
+</table>
