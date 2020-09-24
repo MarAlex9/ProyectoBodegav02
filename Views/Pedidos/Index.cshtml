@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ProyectoBodegav02.Models.Pedido>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_Pedido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descripcion_Pedido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.confirmacion_Pedido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empleado.cargo_Empleado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_Pedido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcion_Pedido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.confirmacion_Pedido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empleado.cargo_Empleado)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idPedido }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idPedido }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idPedido })
+        </td>
+    </tr>
+}
+
+</table>

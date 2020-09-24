@@ -1,0 +1,58 @@
+﻿@model ProyectoBodegav02.Models.Producto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Producto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nom_Producto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nom_Producto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.marca_Producto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.marca_Producto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.precio_Producto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precio_Producto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoria.nombre_Cat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoria.nombre_Cat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Proveedor.nombre_Prove)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Proveedor.nombre_Prove)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idProducto }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
