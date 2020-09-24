@@ -1,33 +1,33 @@
 ﻿@model IEnumerable<ProyectoBodegav02.Models.Usuario>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Lista Usuario";
 }
 
-<h2>Index</h2>
+    <h2>Lista Usuario</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear nuevo usuario", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.nombre_Usuario)
+           Nombre
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.apellido_Usuario)
+           Apellido
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.direccion_Usuario)
+            Direccion
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.cedula_Usuario)
+            Cedula
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.correro_Usuario)
+            Correo
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.genero_Usuario)
+            Genero
         </th>
         <th></th>
     </tr>
@@ -53,9 +53,9 @@
             @Html.DisplayFor(modelItem => item.genero_Usuario)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idPersona }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idPersona }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idPersona })
+            @Html.ActionLink("Editar", "Edit", new { id=item.idPersona }) |
+            @Html.ActionLink("Actualizar", "Details", new { id=item.idPersona }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.idPersona })
         </td>
     </tr>
 }
