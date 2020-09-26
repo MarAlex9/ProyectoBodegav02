@@ -167,6 +167,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InventariosController.cs" />
     <Compile Include="Controllers\PedidosController.cs" />
+    <Compile Include="Controllers\Pedido_ProductoController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Controllers\ProveedorsController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
@@ -325,6 +326,12 @@
     <Content Include="Views\Productos\Details.cshtml" />
     <Content Include="Views\Productos\Edit.cshtml" />
     <Content Include="Views\Productos\Index.cshtml" />
+    <Content Include="Views\Pedido_Producto\Create.cshtml" />
+    <Content Include="Views\Pedido_Producto\Delete.cshtml" />
+    <Content Include="Views\Pedido_Producto\Details.cshtml" />
+    <Content Include="Views\Pedido_Producto\Edit.cshtml" />
+    <Content Include="Views\Pedido_Producto\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
