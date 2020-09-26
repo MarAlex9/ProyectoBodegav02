@@ -4,60 +4,117 @@
     ViewBag.Title = "Lista Usuario";
 }
 
-    <h2>Lista Usuario</h2>
+<style>
+    body {
+        background-color: #632432;
+        font-family: Arial;
+    }
+
+
+    #main-container {
+        margin: 150px auto;
+        width: 600px;
+    }
+
+    table {
+        background-color: white;
+        text-align: left;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        padding: 20px;
+    }
+
+    thead {
+        background-color: #000;
+        border-bottom: solid 5px #0F362D;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #ddd;
+    }
+
+    tr:hover td {
+        background-color: #369681;
+        color: white;
+    }
+</style>
+
+
+<h2>Lista Usuario</h2>
 
 <p>
-    @Html.ActionLink("Crear nuevo usuario", "Create")
+
+    <button type="button" class="btn btn-dark">
+        @Html.ActionLink("Create New", "Create")
+    </button>
 </p>
-<table class="table">
-    <tr>
-        <th>
-           Nombre
-        </th>
-        <th>
-           Apellido
-        </th>
-        <th>
-            Direccion
-        </th>
-        <th>
-            Cedula
-        </th>
-        <th>
-            Correo
-        </th>
-        <th>
-            Genero
-        </th>
-        <th></th>
-    </tr>
+<body background="https://www.adslzone.net/app/uploads/2019/06/cambiar-nombre-usuario-windows-10.jpg">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombre_Usuario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.apellido_Usuario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.direccion_Usuario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cedula_Usuario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.correro_Usuario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.genero_Usuario)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.idPersona }) |
-            @Html.ActionLink("Actualizar", "Details", new { id=item.idPersona }) |
-            @Html.ActionLink("Borrar", "Delete", new { id=item.idPersona })
-        </td>
-    </tr>
-}
 
-</table>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Apellido
+                    </th>
+                    <th>
+                        Direccion
+                    </th>
+                    <th>
+                        Cedula
+                    </th>
+                    <th>
+                        Correo
+                    </th>
+                    <th>
+                        Genero
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+
+
+            @foreach (var item in Model)
+            {
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre_Usuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.apellido_Usuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.direccion_Usuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cedula_Usuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.correro_Usuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.genero_Usuario)
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary">   @Html.ActionLink("Editar", "Edit", new { id = item.idPersona }, new { @style = "color:#fff;" }) </button>
+                    <button type="button" class="btn btn-success">  @Html.ActionLink("Actualizar", "Details", new { id = item.idPersona }, new { @style = "color:#fff;" }) </button>
+                    <button type="button" class="btn btn-danger">   @Html.ActionLink("Borrar", "Delete", new { id = item.idPersona }, new { @style = "color:#fff;" })   </button>
+
+
+                </td>
+            </tr>
+        </tbody>
+                    }
+
+            </table>
+        </div>
+</body>

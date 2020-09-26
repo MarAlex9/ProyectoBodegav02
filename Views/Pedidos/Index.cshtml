@@ -4,48 +4,106 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+    <style>
+        body {
+            background-color: #632432;
+            font-family: Arial;
+        }
+
+
+        #main-container {
+            margin: 150px auto;
+            width: 600px;
+        }
+
+        table {
+            background-color: white;
+            text-align: left;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 20px;
+        }
+
+        thead {
+            background-color: #000;
+            border-bottom: solid 5px #0F362D;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #ddd;
+        }
+
+        tr:hover td {
+            background-color: #369681;
+            color: white;
+        }
+    </style>
+
+<h2>Pedidos</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+   
+    <button type="button" class="btn btn-dark">
+        @Html.ActionLink("Create New", "Create")
+    </button>
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.fecha_Pedido)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.descripcion_Pedido)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.confirmacion_Pedido)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Empleado.cargo_Empleado)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.fecha_Pedido)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.descripcion_Pedido)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.confirmacion_Pedido)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Empleado.cargo_Empleado)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idPedido }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idPedido }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idPedido })
-        </td>
-    </tr>
-}
+<body background="https://blog.cooltra.com/wp-content/uploads/2016/09/pedidos-clientes.jpg">
 
-</table>
+
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.fecha_Pedido)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.descripcion_Pedido)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.confirmacion_Pedido)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Empleado.cargo_Empleado)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            @foreach (var item in Model)
+            {
+        <tbody>
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fecha_Pedido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.descripcion_Pedido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.confirmacion_Pedido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Empleado.cargo_Empleado)
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary"> @Html.ActionLink("Edit", "Edit", new { id = item.idPedido }, new { @style = "color:#fff;" }) </button>
+                    <button type="button" class="btn btn-success">  @Html.ActionLink("Details", "Details", new { id = item.idPedido }, new { @style = "color:#fff;" }) </button>
+                    <button type="button" class="btn btn-danger">   @Html.ActionLink("Delete", "Delete", new { id = item.idPedido }, new { @style = "color:#fff;" })   </button>
+
+                   
+                </td>
+            </tr>
+        </tbody>
+                    }
+
+            </table>
+
+</div>
+</body>
