@@ -17,7 +17,7 @@ namespace ProyectoBodegav02.Controllers
         // GET: Categorias
         public ActionResult Index()
         {
-            return View(db.Categoria.ToList());
+            return  View(db.Categoria.ToList());
         }
 
         // GET: Categorias/Details/5
