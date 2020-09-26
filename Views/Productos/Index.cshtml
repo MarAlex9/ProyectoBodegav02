@@ -3,55 +3,110 @@
 @{
     ViewBag.Title = "Index";
 }
+    <style>
+        body {
+            background-color: #632432;
+            font-family: Arial;
+        }
 
-<h2>Index</h2>
+
+        #main-container {
+            margin: 150px auto;
+            width: 600px;
+        }
+
+        table {
+            background-color: white;
+            text-align: left;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 20px;
+        }
+
+        thead {
+            background-color: #000;
+            border-bottom: solid 5px #0F362D;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #ddd;
+        }
+
+        tr:hover td {
+            background-color: #369681;
+            color: white;
+        }
+    </style>
+
+<h2>Productos</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+ 
+    <button type="button" class="btn btn-dark">
+        @Html.ActionLink("Create New", "Create")
+    </button>
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.nom_Producto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.marca_Producto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.precio_Producto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Categoria.nombre_Cat)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Proveedor.nombre_Prove)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.nom_Producto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.marca_Producto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.precio_Producto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Categoria.nombre_Cat)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Proveedor.nombre_Prove)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idProducto }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idProducto }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idProducto })
-        </td>
-    </tr>
-}
+<body background="https://review.chinabrands.com/chinabrands/seo/image/20190307/mayoristadeherramientas.jpg">
 
-</table>
+
+    <div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.nom_Producto)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.marca_Producto)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.precio_Producto)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Categoria.nombre_Cat)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Proveedor.nombre_Prove)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            @foreach (var item in Model)
+            {
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nom_Producto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.marca_Producto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.precio_Producto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categoria.nombre_Cat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Proveedor.nombre_Prove)
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary">  @Html.ActionLink("Edit", "Edit", new { id = item.idProducto }, new { @style = "color:#fff;" }) </button>
+                    <button type="button" class="btn btn-success">  @Html.ActionLink("Details", "Details", new { id = item.idProducto }, new { @style = "color:#fff;" }) </button>
+                    <button type="button" class="btn btn-danger">   @Html.ActionLink("Delete", "Delete", new { id = item.idProducto }, new { @style = "color:#fff;" })   </button>
+
+                </td>
+            </tr>
+        </tbody>
+                    }
+
+            </table>
+        </div>
+    </body>

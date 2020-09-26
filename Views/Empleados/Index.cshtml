@@ -4,42 +4,102 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.cargo_Empleado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.contraseña)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Usuario.nombre_Usuario)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.cargo_Empleado)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.contraseña)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Usuario.nombre_Usuario)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idEmpleado }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idEmpleado }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idEmpleado })
-        </td>
-    </tr>
+<style>
+body{
+	background-color: #632432;
+	font-family: Arial;
 }
 
-</table>
+
+#main-container{
+	margin: 150px auto;
+	width: 600px;
+}
+
+table{
+	background-color: white;
+	text-align: left;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td{
+	padding: 20px;
+    
+}
+
+thead{
+	background-color: #000;
+	border-bottom: solid 5px #0F362D;
+	color: white;
+}
+
+    tr:nth-child(even) {
+        background-color: #ddd;
+    }
+
+tr:hover td{
+	background-color: #369681;
+	color: white;
+}
+</style>
+
+
+<h2>Empleados</h2>
+
+<p>
+    <button type="button" class="btn btn-dark">
+        @Html.ActionLink("Crear nuevo Empleado", "Create")  
+    </button>
+
+</p>
+<body background="https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2017/11/28133012/porta.jpg">
+
+
+    <div >
+        <table  >
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.cargo_Empleado)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.contraseña)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Usuario.nombre_Usuario)
+                    </th>
+                    <th>
+                    </th>
+
+                </tr>
+            </thead>
+
+            @foreach (var item in Model)
+            {
+                <tbody >
+
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.cargo_Empleado)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.contraseña)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Usuario.nombre_Usuario)
+                        </td>
+                        <td>
+                            
+                            <button type="button" class="btn btn-success">  @Html.ActionLink("Detalles", "Details", new { id = item.idEmpleado }, new { @style = "color:#fff;" }) </button>
+                            <button type="button" class="btn btn-danger"> >  @Html.ActionLink("Eliminar", "Delete", new { id = item.idEmpleado }, new { @style = "color:#fff;" })   </button>
+
+                        </td>
+                    </tr>
+                </tbody>
+            }
+
+        </table>
+    </div>
+
+</body>

@@ -186,6 +186,7 @@ optgroup {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+  background-color: blue;
 }
 td,
 th {
@@ -253,6 +254,7 @@ th {
   }
   .table {
     border-collapse: collapse !important;
+    
   }
   .table td,
   .table th {
@@ -3121,6 +3123,7 @@ select[multiple].input-lg {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  /color: white;
 }
 .btn:focus,
 .btn:active:focus,
