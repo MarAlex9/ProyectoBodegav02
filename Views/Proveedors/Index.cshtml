@@ -3,55 +3,111 @@
 @{
     ViewBag.Title = "Index";
 }
+    <style>
+        body {
+            background-color: #632432;
+            font-family: Arial;
+        }
 
-<h2>Index</h2>
+
+        #main-container {
+            margin: 150px auto;
+            width: 600px;
+        }
+
+        table {
+            background-color: white;
+            text-align: left;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 20px;
+        }
+
+        thead {
+            background-color: #000;
+            border-bottom: solid 5px #0F362D;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #ddd;
+        }
+
+        tr:hover td {
+            background-color: #369681;
+            color: white;
+        }
+    </style>
+
+<h2 >Proveedores</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+
+    <button type="button" class="btn btn-dark">
+        @Html.ActionLink("Create New", "Create")
+    </button>
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.nombre_Prove)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.telefono_Prove)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.direccion_Prove)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NIF_Prove)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.correo_Prove)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombre_Prove)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.telefono_Prove)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.direccion_Prove)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NIF_Prove)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.correo_Prove)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idProveedor }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idProveedor }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idProveedor })
-        </td>
-    </tr>
-}
+<body background="https://www.esan.edu.pe/apuntes-empresariales/2017/08/22/1200x630_proveedores.jpg">
 
-</table>
+
+    <div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.nombre_Prove)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.telefono_Prove)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.direccion_Prove)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NIF_Prove)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.correo_Prove)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            @foreach (var item in Model)
+            {
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre_Prove)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.telefono_Prove)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.direccion_Prove)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NIF_Prove)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.correo_Prove)
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary">  @Html.ActionLink("Edit", "Edit", new { id = item.idProveedor }, new { @style = "color:#fff;" }) </button>
+                    <button type="button" class="btn btn-success">  @Html.ActionLink("Details", "Details", new { id = item.idProveedor }, new { @style = "color:#fff;" }) </button>
+                    <button type="button" class="btn btn-danger">   @Html.ActionLink("Delete", "Delete", new { id = item.idProveedor }, new { @style = "color:#fff;" })   </button>
+
+                </td>
+            </tr>
+        </tbody>
+                    }
+
+            </table>
+
+</div>
+</body>
